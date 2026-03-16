@@ -25,93 +25,123 @@ while True:
     if opcion == "0":
         print("Bye")
         break
-# Enter decimal numbers, example: 5.0
+
     elif opcion == "1":
-        sub= retroceder()
+        sub = retroceder()
         if sub == "2":
-             continue
-        base   = float(input("Enter the base: "))
-        altura = float(input("Enter the height: "))
-        lado  = float(input("Enter side 1: "))
-        area      = base * altura / 2
-        perimeter = lado*3
-        print("Area:", area)
-        print("Perimeter:", perimeter)
+            continue
+        try:
+            base  = float(input("Enter the base: "))
+            altura = float(input("Enter the height: "))
+            lado  = float(input("Enter side 1: "))
+            area      = base * altura / 2
+            perimeter = lado * 3
+            print("Area:", area)
+            print("Perimeter:", perimeter)
+        except ValueError:
+            print("⚠ Please enter valid numbers only!")
 
     elif opcion == "2":
-        sub= retroceder()
+        sub = retroceder()
         if sub == "2":
-             continue
-        radio     = float(input("Enter radio: "))
-        area      = pi * radio ** 2
-        perimeter = 2 * pi * radio
-        print("Area:", area)
-        print("Perimeter:", perimeter)
+            continue
+        try:
+            radio     = float(input("Enter radio: "))
+            area      = pi * radio ** 2
+            perimeter = 2 * pi * radio
+            print("Area:", area)
+            print("Perimeter:", perimeter)
+        except ValueError:
+            print("⚠ Please enter valid numbers only!")
 
     elif opcion == "3":
-        sub= retroceder()
+        sub = retroceder()
         if sub == "2":
-             continue
-        base   = float(input("Enter base: "))
-        altura = float(input("Enter height: "))
-        area      = base * altura
-        perimeter = 2 * (base + altura)
-        print("Area:", area)
-        print("Perimeter:", perimeter)
+            continue
+        try:
+            base   = float(input("Enter base: "))
+            altura = float(input("Enter height: "))
+            area      = base * altura
+            perimeter = 2 * (base + altura)
+            print("Area:", area)
+            print("Perimeter:", perimeter)
+        except ValueError:
+            print("⚠ Please enter valid numbers only!")
+
     elif opcion == "4":
-        sub= retroceder()
+        sub = retroceder()
         if sub == "2":
-             continue
-        cateto1= float(input("Enter cateto: "))
-        cateto2= float(input("Enter cateto: "))
-        angulo1= float(input("Enter angulo"))
-        angulo2= float(input("Enter angulo"))
-        angulos = angulo1 + angulo2 + 90 
-        area      = (cateto1 * cateto2)/2
-        hypotenuse= (cateto1** 2+ cateto2 **2)**0.5
-        perimeter =  cateto1+ cateto2+ hypotenuse
-        print("Area:", area)
-        print("Perimeter:", perimeter)
-        print("Hypotenuse:", hypotenuse)
-        print("Suma angulos:", angulos)
-        
-        # figura 3D
+            continue
+        try:
+            cateto1 = float(input("Enter cateto 1: "))
+            cateto2 = float(input("Enter cateto 2: "))
+            angulo1 = float(input("Enter angulo 1: "))
+            angulo2 = float(input("Enter angulo 2: "))
+            angulos    = angulo1 + angulo2 + 90
+            area       = (cateto1 * cateto2) / 2
+            hypotenuse = (cateto1 ** 2 + cateto2 ** 2) ** 0.5
+            perimeter  = cateto1 + cateto2 + hypotenuse
+            print("Area:", area)
+            print("Perimeter:", perimeter)
+            print("Hypotenuse:", hypotenuse)
+            print("Suma angulos:", angulos)
+        except ValueError:
+            print("⚠ Please enter valid numbers only!")
+
     elif opcion == "5":
-        sub= retroceder()
+        sub = retroceder()
         if sub == "2":
-             continue
-        lado=float(input("Enter lado:"))
-        volumen=lado**3
-        area=6*lado**2
-        print( "volumen",volumen)
-        print("area ",area)
+            continue
+        try:
+            lado    = float(input("Enter lado: "))
+            volumen = lado ** 3
+            area    = 6 * lado ** 2
+            print("Volumen:", volumen)
+            print("Area:", area)
+        except ValueError:
+            print("⚠ Please enter valid numbers only!")
+
     elif opcion == "6":
-        sub= retroceder()
+        sub = retroceder()
         if sub == "2":
-             continue
-        radio=float(input("Entre radio:"))
-        Esfera_area= 4* pi * radio **2  
-        volumen= (4/3) * pi * radio ** 3
-        print("the resultado ",Esfera_area)
-        print("the is resultado ",volumen)
+            continue
+        try:
+            radio      = float(input("Enter radio: "))
+            area       = 4 * pi * radio ** 2
+            volumen    = (4/3) * pi * radio ** 3
+            print("Area:", area)
+            print("Volumen:", volumen)
+        except ValueError:
+            print("⚠ Please enter valid numbers only!")
+
     elif opcion == "7":
-        sub= retroceder()
+        sub = retroceder()
         if sub == "2":
-             continue
-        altura=float(input("Enter  altura:"))
-        radio=float(input("Enter radio: "))
-        ci_area= 2* pi*radio*(radio+altura)
-        volumen= pi*radio **2 *altura
-        print("ci_area",ci_area)
-        print("volmen",volumen)
+            continue
+        try:
+            altura  = float(input("Enter altura: "))
+            radio   = float(input("Enter radio: "))
+            area    = 2 * pi * radio * (radio + altura)
+            volumen = pi * radio ** 2 * altura
+            print("Area:", area)
+            print("Volumen:", volumen)
+        except ValueError:
+            print("⚠ Please enter valid numbers only!")
+
     elif opcion == "8":
-        sub= retroceder()
+        sub = retroceder()
         if sub == "2":
-             continue
-        radio=float(input("Enter radio: "))
-        altura=float(input("Enter altura: "))
-        generatriz=float(input("Enter generatriz :"))
-        area_s=pi *radio*(radio + generatriz)
-        volumen=(1/3) * pi *radio**2 *altura  
-        print("volumen",volumen)
-        print("area:",area_s)
+            continue
+        try:
+            radio      = float(input("Enter radio: "))
+            altura     = float(input("Enter altura: "))
+            generatriz = float(input("Enter generatriz: "))
+            area       = pi * radio * (radio + generatriz)
+            volumen    = (1/3) * pi * radio ** 2 * altura
+            print("Area:", area)
+            print("Volumen:", volumen)
+        except ValueError:
+            print("⚠ Please enter valid numbers only!")
+
+    else:
+        print("⚠ Invalid option!")
