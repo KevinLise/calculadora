@@ -1,321 +1,349 @@
 pi = 3.14159
+L = True
+f = True
 
 
 def retroceder():
-    print("1. Calculate")
-    print("2. Go back")
-    sub = input("Choose: ")
+    print("1. Calcular")
+    print("2. Volver")
+    sub = input("Elige: ")
     return sub
 
 
-# Función reutilizable para mostrar resultados con formato uniforme.
-# Recibe dos parámetros:
-# - label: el nombre del resultado (ejemplo: "Area:", "Volumen:")
-# - value: el valor calculado (ejemplo: 6.0, 78.5)
-# En vez de repetir los 3 print en cada figura, se llama una sola vez.
-def mostrar_resultado(label, value):
-    print("------------------------------")
-    print("", label, value)
-    print("------------------------------")
-
-
-while True:
+while L:
     print("==============================")
-    print("   GEOMETRIC CALCULATOR")
+    print(" CALCULADORA GEOMETRICA")
     print("==============================")
-    print("--- 2D Figures ---")
-    print("1. Triangle")
-    print("2. Circle")
-    print("3. Rectangle")
-    print("4. Right Triangle")
-    print("--- 3D Figures ---")
-    print("5. Cube")
-    print("6. Sphere")
-    print("7. Cylinder")
-    print("8. Cone")
-    print("0. Exit")
+    print("--- Figuras 2D ---")
+    print("1. Triangulo")
+    print("2. Circulo")
+    print("3. Rectangulo")
+    print("4. Triangulo Rectangulo")
+    print("--- Figuras 3D ---")
+    print("5. Cubo")
+    print("6. Esfera")
+    print("7. Cilindro")
+    print("8. Cono")
+    print("0. Salir")
     print("==============================")
 
-    opcion = input("Enter the Figure: ")
+    opcion = input("Ingresa la figura: ")
 
     if opcion == "0":
-        print("Bye!")
-        break
+        print("¡Hasta luego!")
 
+        f = False
+
+    # ─── TRIANGULO
     elif opcion == "1":
         sub = retroceder()
         if sub == "2":
             continue
-        print("--- Triangle ---")
+        print("--- Triangulo ---")
         print("1. Area")
-        print("2. Perimeter")
-        sub2 = input("Choose: ")
+        print("2. Perimetro")
+        sub2 = input("Elige: ")
         try:
             if sub2 == "1":
-                base = float(input("Enter base: "))
-                altura = float(input("Enter height: "))
+                base = float(input("Ingresa la base: "))
+                altura = float(input("Ingresa la altura: "))
                 area = base * altura / 2
-                mostrar_resultado("Area:", area)
+
+                print(" Area:", area)
 
             elif sub2 == "2":
-                lado = float(input("Enter side: "))
-                perimeter = lado * 3
-                mostrar_resultado("Perimeter:", perimeter)
+                lado = float(input("Ingresa el lado: "))
+                perimetro = lado * 3
+
+                print(" Perimetro:", perimetro)
 
             else:
-                print(" Invalid option!")
+                print(" Opcion invalida!")
         except ValueError:
-            print(" Please enter valid numbers only!")
+            print(" Por favor ingresa solo numeros!")
 
+    # ─── CIRCULO
     elif opcion == "2":
         sub = retroceder()
         if sub == "2":
             continue
-        print("--- Circle ---")
+        print("--- Circulo ---")
         print("1. Area")
-        print("2. Perimeter")
-        sub2 = input("Choose: ")
+        print("2. Perimetro")
+        sub2 = input("Elige: ")
         try:
             if sub2 == "1":
-                radio = float(input("Enter radius: "))
+                radio = float(input("Ingresa el radio: "))
                 if radio > 0:
                     area = pi * radio**2
-                    mostrar_resultado("Area:", area)
+
+                    print(" Area:", area)
+
                 else:
-                    print(" Radius must be greater than 0!")
+                    print(" El radio debe ser mayor que 0!")
 
             elif sub2 == "2":
-                radio = float(input("Enter radius: "))
+                radio = float(input("Ingresa el radio: "))
                 if radio > 0:
-                    perimeter = 2 * pi * radio
-                    mostrar_resultado("Perimeter:", perimeter)
+                    perimetro = 2 * pi * radio
+
+                    print(" Perimetro:", perimetro)
+
                 else:
-                    print(" Radius must be greater than 0!")
+                    print(" El radio debe ser mayor que 0!")
 
             else:
-                print(" Invalid option!")
+                print(" Opcion invalida!")
         except ValueError:
-            print(" Please enter valid numbers only!")
+            print(" Por favor ingresa solo numeros!")
 
+    # ─── RECTANGULO
     elif opcion == "3":
         sub = retroceder()
         if sub == "2":
             continue
-        print("--- Rectangle ---")
+        print("--- Rectangulo ---")
         print("1. Area")
-        print("2. Perimeter")
-        sub2 = input("Choose: ")
+        print("2. Perimetro")
+        sub2 = input("Elige: ")
         try:
             if sub2 == "1":
-                base = float(input("Enter base: "))
-                altura = float(input("Enter height: "))
+                base = float(input("Ingresa la base: "))
+                altura = float(input("Ingresa la altura: "))
                 area = base * altura
-                mostrar_resultado("Area:", area)
+
+                print(" Area:", area)
 
             elif sub2 == "2":
-                base = float(input("Enter base: "))
-                altura = float(input("Enter height: "))
-                perimeter = 2 * (base + altura)
-                mostrar_resultado("Perimeter:", perimeter)
+                base = float(input("Ingresa la base: "))
+                altura = float(input("Ingresa la altura: "))
+                perimetro = 2 * (base + altura)
+
+                print(" Perimetro:", perimetro)
 
             else:
-                print(" Invalid option!")
+                print(" Opcion invalida!")
         except ValueError:
-            print(" Please enter valid numbers only!")
+            print(" Por favor ingresa solo numeros!")
 
+    # ─── TRIANGULO RECTANGULO
     elif opcion == "4":
         sub = retroceder()
         if sub == "2":
             continue
-        print("--- Right Triangle ---")
+        print("--- Triangulo Rectangulo ---")
         print("1. Area")
-        print("2. Perimeter")
-        print("3. Hypotenuse")
-        print("4. Angle 2")
-        print("5. Missing cateto")
-        print("6. sin opposite")
-        print("7. cos adjacent")
-        print("8. tan opposite")
-        sub2 = input("Choose: ")
+        print("2. Perimetro")
+        print("3. Hipotenusa")
+        print("4. Angulo 2")
+        print("5. Cateto faltante")
+        print("6. sen opuesto")
+        print("7. cos adyacente")
+        print("8. tan opuesto")
+        sub2 = input("Elige: ")
         try:
             if sub2 == "1":
-                cateto1 = float(input("Enter cateto 1: "))
-                cateto2 = float(input("Enter cateto 2: "))
+                cateto1 = float(input("Ingresa cateto 1: "))
+                cateto2 = float(input("Ingresa cateto 2: "))
                 area = (cateto1 * cateto2) / 2
-                mostrar_resultado("Area:", area)
+
+                print(" Area:", area)
 
             elif sub2 == "2":
-                cateto1 = float(input("Enter cateto 1: "))
-                cateto2 = float(input("Enter cateto 2: "))
-                hypotenuse = (cateto1**2 + cateto2**2) ** 0.5
-                perimeter = cateto1 + cateto2 + hypotenuse
-                mostrar_resultado("Perimeter:", perimeter)
+                cateto1 = float(input("Ingresa cateto 1: "))
+                cateto2 = float(input("Ingresa cateto 2: "))
+                hipotenusa = (cateto1**2 + cateto2**2) ** 0.5
+                perimetro = cateto1 + cateto2 + hipotenusa
+
+                print(" Perimetro:", perimetro)
 
             elif sub2 == "3":
-                cateto1 = float(input("Enter cateto 1: "))
-                cateto2 = float(input("Enter cateto 2: "))
-                hypotenuse = (cateto1**2 + cateto2**2) ** 0.5
-                mostrar_resultado("Hypotenuse:", hypotenuse)
+                cateto1 = float(input("Ingresa cateto 1: "))
+                cateto2 = float(input("Ingresa cateto 2: "))
+                hipotenusa = (cateto1**2 + cateto2**2) ** 0.5
+
+                print(" Hipotenusa:", hipotenusa)
 
             elif sub2 == "4":
-                angulo1 = float(input("Enter angle 1: "))
+                angulo1 = float(input("Ingresa angulo 1: "))
                 angulo2 = 90 - angulo1
-                mostrar_resultado("Angle 2:", angulo2)
+
+                print(" Angulo 2:", angulo2)
 
             elif sub2 == "5":
-                hypotenuse = float(input("Enter hypotenuse: "))
-                cateto1 = float(input("Enter cateto 1: "))
-                cateto2 = (hypotenuse**2 - cateto1**2) ** 0.5
-                mostrar_resultado("Missing cateto:", cateto2)
+                hipotenusa = float(input("Ingresa la hipotenusa: "))
+                cateto1 = float(input("Ingresa cateto 1: "))
+                cateto2 = (hipotenusa**2 - cateto1**2) ** 0.5
+
+                print(" Cateto faltante:", cateto2)
 
             elif sub2 == "6":
-                angulo1 = float(input("Enter angle 1 (degrees): "))
-                hypotenuse = float(input("Enter hypotenuse: "))
+                angulo1 = float(input("Ingresa angulo 1 (grados): "))
+                hipotenusa = float(input("Ingresa la hipotenusa: "))
                 angulo_rad = angulo1 * (pi / 180)
-                sin_val = angulo_rad - angulo_rad**3 / 6 + angulo_rad**5 / 120
-                opposite = sin_val * hypotenuse
-                mostrar_resultado("Opposite side:", opposite)
+                sen_val = angulo_rad - angulo_rad**3 / 6 + angulo_rad**5 / 120
+                opuesto = sen_val * hipotenusa
+
+                print(" Lado opuesto:", opuesto)
 
             elif sub2 == "7":
-                angulo1 = float(input("Enter angle 1 (degrees): "))
-                hypotenuse = float(input("Enter hypotenuse: "))
+                angulo1 = float(input("Ingresa angulo 1 (grados): "))
+                hipotenusa = float(input("Ingresa la hipotenusa: "))
                 angulo_rad = angulo1 * (pi / 180)
                 cos_val = 1 - angulo_rad**2 / 2 + angulo_rad**4 / 24
-                adjacent = cos_val * hypotenuse
-                mostrar_resultado("Adjacent side:", adjacent)
+                adyacente = cos_val * hipotenusa
+
+                print(" Lado adyacente:", adyacente)
 
             elif sub2 == "8":
-                angulo1 = float(input("Enter angle 1 (degrees): "))
-                cateto1 = float(input("Enter adjacent cateto: "))
+                angulo1 = float(input("Ingresa angulo 1 (grados): "))
+                cateto1 = float(input("Ingresa cateto adyacente: "))
                 angulo_rad = angulo1 * (pi / 180)
                 tan_val = angulo_rad - angulo_rad**3 / 3 + angulo_rad**5 / 5
-                opposite = cateto1 * tan_val
-                mostrar_resultado("Opposite side:", opposite)
+                opuesto = cateto1 * tan_val
+
+                print(" Lado opuesto:", opuesto)
 
             else:
-                print(" Invalid option!")
+                print(" Opcion invalida!")
         except ValueError:
-            print(" Please enter valid numbers only!")
+            print(" Por favor ingresa solo numeros!")
 
+    # ─── CUBO
     elif opcion == "5":
         sub = retroceder()
         if sub == "2":
             continue
-        print("--- Cube ---")
-        print("1. Volume")
+        print("--- Cubo ---")
+        print("1. Volumen")
         print("2. Area")
-        sub2 = input("Choose: ")
+        sub2 = input("Elige: ")
         try:
             if sub2 == "1":
-                lado = float(input("Enter side: "))
+                lado = float(input("Ingresa el lado: "))
                 volumen = lado**3
-                mostrar_resultado("Volume:", volumen)
+
+                print(" Volumen:", volumen)
 
             elif sub2 == "2":
-                lado = float(input("Enter side: "))
+                lado = float(input("Ingresa el lado: "))
                 area = 6 * lado**2
-                mostrar_resultado("Area:", area)
+
+                print(" Area:", area)
 
             else:
-                print(" Invalid option!")
+                print(" Opcion invalida!")
         except ValueError:
-            print(" Please enter valid numbers only!")
+            print(" Por favor ingresa solo numeros!")
 
+    # ─── ESFERA
     elif opcion == "6":
         sub = retroceder()
         if sub == "2":
             continue
-        print("--- Sphere ---")
-        print("1. Volume")
+        print("--- Esfera ---")
+        print("1. Volumen")
         print("2. Area")
-        sub2 = input("Choose: ")
+        sub2 = input("Elige: ")
         try:
             if sub2 == "1":
-                radio = float(input("Enter radius: "))
+                radio = float(input("Ingresa el radio: "))
                 if radio > 0:
                     volumen = (4 / 3) * pi * radio**3
-                    mostrar_resultado("Volume:", volumen)
+
+                    print(" Volumen:", volumen)
+
                 else:
-                    print(" Radius must be greater than 0!")
+                    print("⚠ El radio debe ser mayor que 0!")
 
             elif sub2 == "2":
-                radio = float(input("Enter radius: "))
+                radio = float(input("Ingresa el radio: "))
                 if radio > 0:
                     area = 4 * pi * radio**2
-                    mostrar_resultado("Area:", area)
+
+                    print(" Area:", area)
+
                 else:
-                    print(" Radius must be greater than 0!")
+                    print(" El radio debe ser mayor que 0!")
 
             else:
-                print(" Invalid option!")
+                print(" Opcion invalida!")
         except ValueError:
-            print(" Please enter valid numbers only!")
+            print(" Por favor ingresa solo numeros!")
 
-    # CYLINDER
+    # ─── CILINDRO
     elif opcion == "7":
         sub = retroceder()
         if sub == "2":
             continue
-        print("--- Cylinder ---")
-        print("1. Volume")
+        print("--- Cilindro ---")
+        print("1. Volumen")
         print("2. Area")
-        sub2 = input("Choose: ")
+        sub2 = input("Elige: ")
         try:
             if sub2 == "1":
-                radio = float(input("Enter radius: "))
-                altura = float(input("Enter height: "))
+                radio = float(input("Ingresa el radio: "))
+                altura = float(input("Ingresa la altura: "))
                 if radio > 0:
                     volumen = pi * radio**2 * altura
-                    mostrar_resultado("Volume:", volumen)
+
+                    print(" Volumen:", volumen)
+
                 else:
-                    print("⚠ Radius must be greater than 0!")
+                    print("⚠ El radio debe ser mayor que 0!")
 
             elif sub2 == "2":
-                radio = float(input("Enter radius: "))
-                altura = float(input("Enter height: "))
+                radio = float(input("Ingresa el radio: "))
+                altura = float(input("Ingresa la altura: "))
                 if radio > 0:
                     area = 2 * pi * radio * (radio + altura)
-                    mostrar_resultado("Area:", area)
+
+                    print(" Area:", area)
+
                 else:
-                    print(" Radius must be greater than 0!")
+                    print(" El radio debe ser mayor que 0!")
 
             else:
-                print(" Invalid option!")
+                print(" Opcion invalida!")
         except ValueError:
-            print(" Please enter valid numbers only!")
+            print(" Por favor ingresa solo numeros!")
 
-    # CONE
+    # ─── CONO
     elif opcion == "8":
         sub = retroceder()
         if sub == "2":
             continue
-        print("--- Cone ---")
-        print("1. Volume")
+        print("--- Cono ---")
+        print("1. Volumen")
         print("2. Area")
-        sub2 = input("Choose: ")
+        sub2 = input("Elige: ")
         try:
             if sub2 == "1":
-                radio = float(input("Enter radius: "))
-                altura = float(input("Enter height: "))
+                radio = float(input("Ingresa el radio: "))
+                altura = float(input("Ingresa la altura: "))
                 if radio > 0:
                     volumen = (1 / 3) * pi * radio**2 * altura
-                    mostrar_resultado("Volume:", volumen)
+
+                    print(" Volumen:", volumen)
+
                 else:
-                    print(" Radius must be greater than 0!")
+                    print("⚠ El radio debe ser mayor que 0!")
 
             elif sub2 == "2":
-                radio = float(input("Enter radius: "))
-                generatriz = float(input("Enter slant height: "))
+                radio = float(input("Ingresa el radio: "))
+                generatriz = float(input("Ingresa la generatriz: "))
                 if radio > 0:
                     area = pi * radio * (radio + generatriz)
-                    mostrar_resultado("Area:", area)
+
+                    print(" Area:", area)
+
                 else:
-                    print(" Radius must be greater than 0!")
+                    print("⚠ El radio debe ser mayor que 0!")
 
             else:
-                print(" Invalid option!")
+                print(" Opcion invalida!")
         except ValueError:
-            print(" Please enter valid numbers only!")
+            print(" Por favor ingresa solo numeros!")
 
     else:
-        print(" Invalid option!")
+        print(" Opcion invalida!")
